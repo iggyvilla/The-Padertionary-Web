@@ -1,0 +1,332 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 700px;
+}
+
+.title {
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.title span {
+  font-family: 'Public Sans';
+  position: relative;
+  bottom: 40px;
+  font-size: xx-large;
+}
+
+.title img {
+  width: 100px;
+  position: relative;
+  right: 20px;
+}
+
+.bottom {
+  font-family: 'Public Sans';
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 600px;
+}
+
+.sidebar {
+  float: left;
+}
+
+.word-list {
+  position: relative;
+  left: 10px;
+  padding-left: 20px;
+  padding-right: 15px;
+  overflow-y: scroll;
+  height: 83vh;
+}
+
+.word {
+  background-color: rgb(255, 255, 255);
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 5px;
+  margin-top: 15px;
+  padding-bottom: 5px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.109);
+  border-radius: 10px;
+}
+
+.word img {
+  margin-top: 10px;
+  opacity: 0.5;
+  width: 25px;
+  float: right;
+  cursor: pointer;
+}
+
+.bottom-margin {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  text-align: center;
+}
+
+.bottom-margin button {
+  margin-left: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(199, 199, 199);
+  border-radius: 10px;
+}
+
+@keyframes hoverbutton {
+  from {
+    background-color: white;
+  } to {
+    background-color: rgb(192, 192, 192);
+  }
+}
+
+.nextPage, .prevPage {
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor:pointer;
+  width: 50px;
+}
+
+.nextPage:hover, .prevPage:hover {
+  animation-name: hoverbutton;
+  animation-duration: 1s;
+  background-color: rgb(192, 192, 192);
+}
+
+#sideButton {
+  cursor: pointer;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0%;
+  } to {
+    opacity: 30%;
+  }
+}
+
+@keyframes scale-up {
+  from {
+    transform: scale(0);
+  } to {
+    transform: scale(1);
+  }
+}
+
+.dimback {
+  background-color: black;
+  float: left;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: fade-in 0.5s;
+  opacity: 30%;
+  z-index: 5;
+}
+
+.zoomin {
+  animation: scale-up 0.5s;
+}
+
+.zoomout {
+  animation: scale-up 0.5s;
+  animation-direction: reverse;
+  animation-timing-function: ease-out;
+}
+
+.popup-enter {
+  opacity: 0;
+}
+.popup-enter-active {
+  opacity: 1;
+  transition: opacity 2000ms;
+}
+.popup-exit {
+  opacity: 1;
+}
+.popup-exit-active {
+  opacity: 0;
+  transition: opacity 2000ms;
+}
+
+.aboutback {
+  background-color: white;
+  position: absolute;
+  animation: scale-up 0.5s;
+  top: 0;
+  bottom: 0;
+	left: 0;
+	right: 0;
+  margin: auto;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.109);
+  width: 700px;
+  height: 450px;
+  border-radius: 10px;
+  z-index: 6;
+}
+
+.about p, h1 {
+  font-family: 'Public Sans';
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.about h1 {
+  padding-top: 20px;
+}
+
+.aboutClose {
+  z-index: 7;
+  float: right;
+  width: 40px;
+  padding-top: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+/* For the add a word screen */
+
+@keyframes showintextbottom {
+  from {
+    border-color: rgb(255, 255, 255);
+    width: 5%;
+  } to {
+    border-color: rgb(58, 58, 58);
+    width: 87%;
+  }
+}
+
+.wordPreview ol {
+  font-family: 'Public Sans';
+  margin-left: 40px;
+}
+
+.wordPreview {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.109);
+  border-radius: 20px;
+  text-overflow: ellipsis;
+  width: 500px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.wordPreview form .wordTitle, .wordType, .addDefDiv input {
+  margin-top: 20px;
+  margin-left: 15px;
+  width: 90%;
+  font-family: 'Public Sans';
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: white;
+  background: none;
+}
+
+.wordPreview form .wordTitle {
+  font-size: xx-large;
+}
+
+.wordPreview form .wordType {
+  font-size: medium;
+  margin-left: 30px;
+}
+
+.wordPreview form .wordTitle:focus, .wordType:focus, .addDefDiv input:focus {
+  outline: 0;
+  border-width: 0 0 3px;
+  animation: showintextbottom 0.3s;
+  border-color: rgb(58, 58, 58);
+}
+
+
+.addDefDiv {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-left: 15px;
+  position: absolute;
+  bottom: 10;
+  top: 70%;
+}
+
+.addDefDiv form {
+  margin-top: 10px;
+  font-family: 'Public Sans';
+  margin-bottom: 20px;
+  margin-right: 5px;
+  text-overflow: ellipsis;
+}
+
+.addDefDiv form input {
+  font-size: small;
+  text-overflow: ellipsis;
+  padding-bottom: 5px;
+}
+
+.addDefDiv button {
+  background-color: rgb(105, 105, 105);
+  border-radius: 5px;
+  font-family: 'Public Sans';
+  padding: 5px 5px 5px 5px;
+  color: white;
+  cursor: not-allowed;
+}
+
+.addDefDiv .allowedButton {
+  background-color: black;
+}
+
+.addDefDiv .allowedButton:hover {
+  cursor: pointer;
+  background-color: rgb(66, 66, 66);
+}
+
+/* Lol */
+.addaword {
+  margin-top: 30px;
+}
+
+.controlpaneladdword {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.controlpaneladdword img {
+  width: 35px;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.notallowedupload {
+  cursor: not-allowed;
+}
+
+.restarticon {
+  cursor: pointer;
+}
+
+.searchbar {
+  margin-top: 15px;
+  font-family: 'Public Sans';
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.searchbar:focus {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.109);
+  outline: none;
+}
